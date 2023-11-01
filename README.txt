@@ -1,45 +1,20 @@
-Do at least ONE of the following tasks: refactor is mandatory. Write tests is optional, will be good bonus to see it. 
-Please do not invest more than 2-4 hours on this.
-Upload your results to a Github repo, for easier sharing and reviewing.
-
-Thank you and good luck!
-
-
-
-Code to refactor
+Good things:
 =================
-1) app/Http/Controllers/BookingController.php
-2) app/Repository/BookingRepository.php
+1- The code separates different functionalities into separate methods, making it easier to maintain and understand.
+2- The methods rely on dependency injection, which is a good practice for handling dependencies and improving testability.
+3- The code appears to be written with reusability in mind, as each method delegates its functionality to a repository, which is a good practice for maintaining clean and maintainable code.
+4- Variable names are mostly clear and descriptive, making it easier to understand the purpose of each variable.
+5- Logging is used to record important information, which can be helpful for debugging and monitoring.
 
-Code to write tests (optional)
+Issues/What Could Be Improved:
 =====================
-3) App/Helpers/TeHelper.php method willExpireAt
-4) App/Repository/UserRepository.php, method createOrUpdate
+1- The code lacks comments explaining the purpose and functionality of each method. Adding comments would make it easier for other developers (and your future self) to understand the code.
+2- The code doesn't appear to include validation for the incoming request data. It's essential to validate user input to ensure data integrity and security.
+3- Variable naming is inconsistent. For example, some variables use snake_case, while others use camelCase. Consistency in variable naming makes the code more readable.
+4- Proper error handling mechanisms should be implemented to handle potential exceptions or errors that may occur during request processing.
+5- The code defines variables. Remove unused variables to maintain clean code.
+6- Some values are hardcoded directly into the code, like 'immediatetime' and 'numpages'. It's better to define such constants as class constants or configuration values for easier maintenance.
 
 
+These are my thoughts what is good, ok and make code terrible for this code.
 ----------------------------
-
-What I expect in your repo:
-
-X. A readme with:   Your thoughts about the code. What makes it amazing code. Or what makes it ok code. Or what makes it terrible code. How would you have done it. Thoughts on formatting, structure, logic.. The more details that you can provide about the code (what's terrible about it or/and what is good about it) the easier for us to assess your coding style, mentality etc
-
-And 
-
-Y.  Refactor it if you feel it needs refactoring. The more love you put into it. The easier for us to asses your thoughts, code principles etc
-
-
-IMPORTANT: Make two commits. First commit with original code. Second with your refactor so we can easily trace changes. 
-
-
-NB: you do not need to set up the code on local and make the web app run. It will not run as its not a complete web app. This is purely to assess you thoughts about code, formatting, logic etc
-
-
-===== So expected output is a GitHub link with either =====
-
-1. Readme described above (point X above) + refactored code 
-OR
-2. Readme described above (point X above) + refactored core + a unit test of the code that we have sent
-
-Thank you!
-
-

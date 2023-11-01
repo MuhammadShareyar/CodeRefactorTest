@@ -1,4 +1,5 @@
 <?php
+
 namespace DTApi\Helpers;
 
 use Carbon\Carbon;
@@ -48,19 +49,18 @@ class TeHelper
         $difference = $due_time->diffInHours($created_at);
 
 
-        if($difference <= 90)
+        // code was falling in only one condition for every case that is less than 90
+
+        if ($difference > 72 && $difference <= 90) {
             $time = $due_time;
-        elseif ($difference <= 24) {
-            $time = $created_at->addMinutes(90);
         } elseif ($difference > 24 && $difference <= 72) {
             $time = $created_at->addHours(16);
+        } elseif ($difference <= 24) {
+            $time = $created_at->addMinutes(90);
         } else {
             $time = $due_time->subHours(48);
         }
 
         return $time->format('Y-m-d H:i:s');
-
     }
-
 }
-
